@@ -1,0 +1,29 @@
+
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:6.13.1",
+            "org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation 'org.testng:testng:7.7.0'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+//    @BeforeAll
+//    static void beforeAll() {
+//        Configuration.pageLoadStrategy = "eager";
+//        Configuration.holdBrowserOpen = true;
